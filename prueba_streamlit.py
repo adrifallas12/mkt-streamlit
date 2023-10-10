@@ -10,8 +10,7 @@ st.selectbox('Pick your name', ['Adriana', 'Jonathan', 'Javier', 'Sofia'])
 st.select_slider('How cold is it?', ['Hot', 'Warm', 'Cold', 'Freezing'])
 
 upload_file = st.file_uploader("Upload your files", type=None, accept_multiple_files=True, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
-
-if upload_file is None:
+if upload_file is not None:
     dataframe = pd.read_csv(upload_file)
     tabla = st.dataframe(dataframe)
     print(tabla)
