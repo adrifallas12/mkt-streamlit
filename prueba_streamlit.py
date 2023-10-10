@@ -13,4 +13,5 @@ upload_file = st.file_uploader("Upload your files", type=None, accept_multiple_f
 
 if upload_file is None:
     dataframe = pd.read_csv(upload_file)
-    st.table(dataframe)
+    tabla = st.dataframe(dataframe)
+    print(tabla)
